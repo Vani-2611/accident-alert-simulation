@@ -1,4 +1,4 @@
-const API_ROOT = '/api';
+const API_ROOT = import.meta.env.VITE_API_URL?.trim().replace(/\/+$/, '') || '/api';
 
 export async function api(path, { token, ...options } = {}) {
   const headers = { 'Content-Type': 'application/json', ...options.headers };
